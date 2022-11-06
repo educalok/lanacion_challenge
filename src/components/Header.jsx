@@ -23,7 +23,7 @@ function Header () {
 
   return (
     <Stack padding={4} direction='row' justifyContent='space-between'>
-      {showLargeSearchBox ? (
+      {!showLargeSearchBox ? (
         <Stack spacing={4} direction='row' justifyContent='space-between'>
           <Stack spacing={4} direction='row' justifyContent='space-around'>
             {showCloseButton ? (
@@ -88,7 +88,7 @@ function Header () {
         </Stack>
       )}
       <Heading
-        hidden={!showLargeSearchBox}
+        hidden={showLargeSearchBox}
         as='b'
         fontFamily='serif'
         fontSize='5xl'
