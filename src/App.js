@@ -1,4 +1,10 @@
-import { ChakraProvider, Container, Stack, theme } from '@chakra-ui/react';
+import {
+  Center,
+  ChakraProvider,
+  Container,
+  Stack,
+  theme,
+} from '@chakra-ui/react';
 import React from 'react';
 
 import CardContainer from './components/CardContainer';
@@ -8,11 +14,11 @@ import Header from './components/Header';
 function App () {
   return (
     <ChakraProvider theme={theme}>
-      <Stack spacing={4} direction='column' justifyContent='space-between'>
+      <Container maxW={1340}>
         <Header />
         <CardContainer />
         <Footer />
-      </Stack>
+      </Container>
     </ChakraProvider>
   );
 }
