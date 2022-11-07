@@ -10,12 +10,14 @@ function Card ({ item }) {
     day: 'numeric',
   };
   return (
-    <Stack
-      shadow='lg'
-      borderWidth='2px'
-      width={400}
-    >
-      <Image src={item.promo_items.basic.url} />
+    <Stack>
+      <Stack>
+        <Image
+          objectFit='cover'
+          boxSize='md'
+          src={item.promo_items.basic.url}
+        />
+      </Stack>
       <Stack>
         <Heading fontSize={'2xl'} fontFamily={'body'} key={uuidv4()}>
           {item.headlines.basic}

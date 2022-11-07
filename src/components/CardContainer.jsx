@@ -1,4 +1,4 @@
-import { SimpleGrid } from '@chakra-ui/react';
+import { GridItem, SimpleGrid, Stack } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -23,11 +23,20 @@ function CardContainer () {
     setData(filteredData);
   }
   return (
-    <SimpleGrid columns={3} spacing={5}>
-      {data &&
-        data.map(item => {
-          return <Card key={uuidv4() + 'card'} item={item} />;
-        })}
+    /*     <SimpleGrid grid-template-columns={'150px 1fr'}>
+     */
+    <SimpleGrid>
+      <GridItem colSpan={3}>
+        <SimpleGrid columns={3} spacing={8}>
+          {data &&
+            data.map(item => {
+              return <Card key={uuidv4() + 'card'} item={item} />;
+            })}
+        </SimpleGrid>
+      </GridItem>
+      <GridItem colSpan={1}>
+        <Stack color='#ffff24' backgroundColor='#ffff24'/>
+      </GridItem>
     </SimpleGrid>
   );
 }
