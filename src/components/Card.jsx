@@ -1,4 +1,4 @@
-import { Heading, Image, Img, Stack, Text } from '@chakra-ui/react';
+import { Heading, Image, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,16 +10,15 @@ function Card ({ item }) {
     day: 'numeric',
   };
   return (
-    <Stack>
+    <Stack spacing={2} marginRight={10} marginBottom={6} flex='1 0 200px'>
       <Stack>
         <Image
           objectFit='cover'
-          boxSize='md'
           src={item.promo_items.basic.url}
         />
       </Stack>
       <Stack>
-        <Heading fontSize={'2xl'} fontFamily={'body'} key={uuidv4()}>
+        <Heading fontSize={'1xl'} fontFamily={'body'} key={uuidv4()}>
           {item.headlines.basic}
         </Heading>
         <Text as='sub' key={uuidv4()}>

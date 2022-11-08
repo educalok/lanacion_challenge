@@ -14,7 +14,6 @@ import {
   CloseIcon,
   HamburgerIcon,
   Search2Icon,
-  SearchIcon,
 } from '@chakra-ui/icons';
 
 function Header () {

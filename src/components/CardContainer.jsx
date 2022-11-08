@@ -1,6 +1,13 @@
-import { GridItem, SimpleGrid, Stack } from '@chakra-ui/react';
+import {
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+  Link,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 import Card from './Card';
 
@@ -23,21 +30,28 @@ function CardContainer () {
     setData(filteredData);
   }
   return (
-    /*     <SimpleGrid grid-template-columns={'150px 1fr'}>
-     */
-    <SimpleGrid>
-      <GridItem colSpan={3}>
-        <SimpleGrid columns={3} spacing={8}>
+    <Grid templateColumns='3fr 1fr'>
+      <GridItem marginRight='10'>
+        <VStack marginBottom={5} alignItems='initial'>
+          <Text as='u' fontSize='4xl' fontFamily='SuecaSlab'>
+            Acumulado Grilla
+          </Text>
+          <HStack>
+            <Link color='#0074c4'>Platos principales</Link>
+            <Link color='#0074c4'>Cerdo Papas</Link>
+            <Link color='#0074c4'>Date un gustito</Link>
+            <Link color='#0074c4'>La familia</Link>
+          </HStack>
+        </VStack>
+        <Flex flexWrap='wrap'>
           {data &&
             data.map(item => {
-              return <Card key={uuidv4() + 'card'} item={item} />;
+              return <Card key={item._id} item={item} />;
             })}
-        </SimpleGrid>
+        </Flex>
       </GridItem>
-      <GridItem colSpan={1}>
-        <Stack color='#ffff24' backgroundColor='#ffff24'/>
-      </GridItem>
-    </SimpleGrid>
+      <GridItem bg='#a0dbe9' />
+    </Grid>
   );
 }
 

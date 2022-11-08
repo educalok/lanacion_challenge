@@ -1,8 +1,8 @@
 import {
-  Center,
   ChakraProvider,
   Container,
-  Stack,
+  Divider,
+  Flex,
   theme,
 } from '@chakra-ui/react';
 import React from 'react';
@@ -14,8 +14,12 @@ import Header from './components/Header';
 function App () {
   return (
     <ChakraProvider theme={theme}>
-      <Container maxW={1340}>
+      <Container h={20} maxW={1292}>
         <Header />
+      </Container>
+      <Divider bordersStyle='#000' borderColor='grey' />
+      <Container maxW={1292}>
+        <Flex marginTop={6} marginBottom={8} bg='#a0dbe9' h='170' />
         <CardContainer />
         <Footer />
       </Container>
